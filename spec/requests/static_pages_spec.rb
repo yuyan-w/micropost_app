@@ -3,26 +3,29 @@ require 'rails_helper'
 RSpec.describe "StaticPages", type: :request do
   describe "GET /home" do
     it "returns http success" do
-      get "/static_pages/home"
+      get root_path
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /help" do
-    # it "returns http success" do
-    #   get "/static_pages/help"
-    #   expect(response).to have_http_status(:success)
-    # end
     it "正常レスポンスコードが返ってくる" do
-      get static_pages_help_url
+      get help_path
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "Get /about" do
     it "正常レスポンスコードが返ってくる" do
-      get static_pages_about_url
+      get about_path
       expect(response.status).to eq 200
+    end
+  end
+
+  describe "Get /contact" do
+    it "正常レスポンスコードが返ってくる" do
+      get contact_path
+      expect(response).to have_http_status(:success)
     end
   end
 
