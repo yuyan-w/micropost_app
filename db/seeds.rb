@@ -1,6 +1,13 @@
 User.delete_all
 
-user_amount = 20
+user_amount = 99
+
+User.create!(
+  name: "管理者ユーザー",
+  email: "admin@example.com",
+  password: "foobar",
+  admin: true
+)
 
 User.transaction do
   1.upto(user_amount) do |i|
