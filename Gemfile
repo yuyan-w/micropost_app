@@ -15,6 +15,9 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 gem 'will_paginate', '~> 3.3', '>= 3.3.1'
 gem 'bootstrap-will_paginate', '~> 1.0'
+gem 'active_storage_validations', '~> 0.9.6'
+gem 'image_processing', '~> 1.12', '>= 1.12.1'
+gem 'mini_magick', '~> 4.11'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -22,6 +25,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "pry-rails"
   gem "pry-byebug"
+  gem "faker"
 end
 
 group :development do
