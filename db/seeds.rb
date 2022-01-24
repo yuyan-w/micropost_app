@@ -1,7 +1,8 @@
 User.delete_all
 Micropost.delete_all
+Relationship.delete_all
 
-user_amount = 30
+user_amount = 99
 
 admin = User.create!(
   name: "管理者ユーザー",
@@ -25,3 +26,9 @@ User.transaction do
     end
   end
 end
+
+users = User.all
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| admin.follow(followed) }
+followers.each { |follower| follower.follow(admin) }
